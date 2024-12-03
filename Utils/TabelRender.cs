@@ -35,6 +35,7 @@ namespace WomemFashionManagement.Utils
         var row = properties.Select(p => p.GetValue(item)?.ToString() ?? string.Empty).ToList();
         PrintRow(row, columnWidths);
       }
+      Console.WriteLine();
     }
 
     private static void PrintRow(IEnumerable<string> columns, int[] columnWidths)

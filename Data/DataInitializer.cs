@@ -4,14 +4,14 @@ namespace WomemFashionManagement.Data
 {
   internal class DataInitializer
   {
-    public static List<Category> Categories { get; set; }
-    public static List<Product> Products { get; set; }
-    public static List<ProductAttributes> ProductAttributes { get; set; }
-    public static List<Order> Orders { get; set; }
-    public static List<OrderDetail> OrderDetails { get; set; }
-    public static List<Customer> Customers { get; set; }
+    public List<Category> Categories { get; set; }
+    public List<Product> Products { get; set; }
+    public List<ProductAttributes> ProductAttributes { get; set; }
+    public List<Order> Orders { get; set; }
+    public List<OrderDetail> OrderDetails { get; set; }
+    public List<Customer> Customers { get; set; }
 
-    static DataInitializer()
+    public DataInitializer()
     {
       Categories = new List<Category>
       {
@@ -76,7 +76,7 @@ namespace WomemFashionManagement.Data
         new ProductAttributes { ProductId = 7, Color = "Blue", Size = "L" },
         new ProductAttributes { ProductId = 8, Color = "Black", Size = "L" },
         new ProductAttributes { ProductId = 9, Color = "White", Size = "M" },
-        new ProductAttributes { ProductId = 10, Color = "Black", Size = "S" },
+        new ProductAttributes { ProductId = 10, Color = "Black", Size = "XXL" },
         new ProductAttributes { ProductId = 11, Color = "White", Size = "M" },
         new ProductAttributes { ProductId = 12, Color = "Green", Size = "L" },
         new ProductAttributes { ProductId = 13, Color = "Red", Size = "S" }

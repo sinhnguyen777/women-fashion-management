@@ -1,4 +1,3 @@
-using WomemFashionManagement.Data;
 namespace WomemFashionManagement.Repositories
 {
   public abstract class BaseRepository<T> : IRepository<T> where T : class
@@ -11,7 +10,7 @@ namespace WomemFashionManagement.Repositories
 
     public virtual List<T> GetAll()
     {
-      return _entities;
+      return _entities.Where(e => e != null).Select(e => e).ToList();
     }
 
     public virtual T GetById(int id)

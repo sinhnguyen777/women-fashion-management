@@ -1,5 +1,4 @@
 ﻿using System;
-using services.Implementations;
 using WomemFashionManagement.Views;
 
 namespace WomemFashionManagement
@@ -15,13 +14,14 @@ namespace WomemFashionManagement
       {
         Console.Clear();
         Console.WriteLine("═══════════════════════ Menu ════════════════════════");
-        Console.WriteLine("1. Lấy danh sách tất cả áo");
-        Console.WriteLine("2. Lấy danh sách áo có giá bán lớn hơn 250.000");
-        Console.WriteLine("3. Lấy tên nhân viên theo mã nhân viên");
-        Console.WriteLine("4. Lấy danh sách hóa đơn theo tổng tiền lớn hơn một giá trị cụ thể");
-        Console.WriteLine("5. Lấy danh sách áo theo loại");
-        Console.WriteLine("6. Lấy danh sách hóa đơn theo khách hàng");
-        Console.WriteLine("7. Lấy danh sách chi tiết hóa đơn của một hóa đơn cụ thể");
+        Console.WriteLine("1. Lấy danh sách tất cả sản phẩm");
+        Console.WriteLine("2. Lấy sản phẩm theo danh mục");
+        Console.WriteLine("3. Lấy sản phẩm có giá trị cao nhất theo danh mục");
+        Console.WriteLine("4. Lấy tên nhân viên theo mã nhân viên");
+        Console.WriteLine("5. Lấy danh sách hóa đơn theo tổng tiền lớn hơn một giá trị cụ thể");
+        Console.WriteLine("6. Lấy danh sách áo theo loại");
+        Console.WriteLine("7. Lấy danh sách hóa đơn theo khách hàng");
+        Console.WriteLine("8. Lấy danh sách chi tiết hóa đơn của một hóa đơn cụ thể");
         Console.WriteLine("8. Lấy thông tin áo theo mã áo");
         Console.WriteLine("9. Lấy danh sách hóa đơn theo ngày lập");
         Console.WriteLine("10. Lấy danh sách áo có mô tả chứa từ khóa");
@@ -36,15 +36,15 @@ namespace WomemFashionManagement
           {
             case 1:
               Console.Clear();
-              productView.DisplayProductsByCategory();
+              productView.DisplayAllProducts();
               break;
             case 2:
               Console.Clear();
-              Console.WriteLine("");
+              productView.DisplayProductsByCategory();
               break;
             case 3:
               Console.Clear();
-              Console.WriteLine("");
+              productView.DisplayProductMaxPriceByCategory();
               break;
             case 4:
               Console.Clear();
