@@ -6,11 +6,11 @@ namespace WomemFashionManagement.Utils
 {
   public class TableRender
   {
-    public static void CreateTable<T>(IEnumerable<T> data)
+    public static void CreateTable<T>(List<T> data)
     {
       if (data == null || !data.Any())
       {
-        Console.WriteLine("No data to display.");
+        Console.WriteLine("Không có dữ liệu để hiển thị.");
         return;
       }
 
@@ -25,6 +25,8 @@ namespace WomemFashionManagement.Utils
           .Select((header, index) => Math.Max(header.Length, data.Max(item => properties[index].GetValue(item)?.ToString()?.Length ?? 0)))
           .ToArray();
 
+      Console.WriteLine();
+
       // In header
       PrintRow(headers, columnWidths);
       PrintSeparator(columnWidths);
@@ -38,7 +40,7 @@ namespace WomemFashionManagement.Utils
       Console.WriteLine();
     }
 
-    private static void PrintRow(IEnumerable<string> columns, int[] columnWidths)
+    private static void PrintRow(List<string> columns, int[] columnWidths)
     {
       var formattedRow = columns.Select((column, index) => column.PadRight(columnWidths[index])).ToList();
       Console.WriteLine("| " + string.Join(" | ", formattedRow) + " |");

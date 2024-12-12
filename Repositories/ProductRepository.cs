@@ -5,7 +5,7 @@ using WomemFashionManagement.Data;
 
 namespace Repositories.ProductRepository
 {
-  public class ProductRepository
+  public class ProductRepository : BaseRepository<ProductDto>
   {
     private readonly DataInitializer _dataInitializer;
     public ProductRepository()
@@ -13,9 +13,24 @@ namespace Repositories.ProductRepository
       _dataInitializer = new DataInitializer();
     }
 
-    public List<Product> GetAllProducts()
+    public List<ProductDto> GetAllProducts()
     {
-      return _dataInitializer.Products;
+      var products = _dataInitializer.Products;
+      var productAttributes = _dataInitializer.ProductAttributes;
+
+      var resultList = from p in products
+                       join pa in productAttributes on p.ProductId equals pa.ProductId
+                       select new ProductDto(
+                         p.ProductId,
+                         p.ProductName,
+                         p.Price,
+                         p.Quantity,
+                         p.CategoryId,
+                         pa.Size,
+                         pa.Color
+                       );
+
+      return resultList.ToList();
     }
 
     public Product GetProductById(int id)

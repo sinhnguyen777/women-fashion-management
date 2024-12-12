@@ -1,6 +1,5 @@
 using Repositories.CategoriesRepository;
 using Repositories.ProductRepository;
-using WomemFashionManagement.Models;
 
 namespace services.Implementations
 {
@@ -14,12 +13,12 @@ namespace services.Implementations
             _categoriesRepository = new CategoriesRepository();
         }
 
-        public List<Product> GetAllProducts()
+        public List<ProductDto> GetAllProducts()
         {
             return _productRepository.GetAllProducts();
         }
 
-        public List<Product> GetProductsByCategory(int categoryId)
+        public List<ProductDto> GetProductsByCategory(int categoryId)
         {
             var products = _productRepository.GetAllProducts();
             var categories = _categoriesRepository.GetAllCategories();
@@ -31,7 +30,7 @@ namespace services.Implementations
             return productsByCategory.ToList();
         }
 
-        public List<Product> GetProductsByCategoryName(string categoryName)
+        public List<ProductDto> GetProductsByCategoryName(string categoryName)
         {
             var products = _productRepository.GetAllProducts();
             var categories = _categoriesRepository.GetAllCategories();
@@ -43,7 +42,7 @@ namespace services.Implementations
             return productsByCategory.ToList();
         }
 
-        public Product? GetProductMaxPriceByCategory(string categoryName)
+        public ProductDto? GetProductMaxPriceByCategory(string categoryName)
         {
             var products = _productRepository.GetAllProducts();
             var categories = _categoriesRepository.GetAllCategories();

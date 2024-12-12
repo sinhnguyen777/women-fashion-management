@@ -48,7 +48,7 @@ namespace WomemFashionManagement.Views
     public void DisplayAllProducts()
     {
       Console.WriteLine("Danh sách tất cả sản phẩm: ");
-      List<Product> products = _productService.GetAllProducts();
+      var products = _productService.GetAllProducts();
       TableRender.CreateTable(products);
     }
 
@@ -56,7 +56,7 @@ namespace WomemFashionManagement.Views
     {
       Console.Write("Nhập mã danh mục sản phẩm: ");
       int categoryId = int.Parse(Console.ReadLine());
-      List<Product> products = _productService.GetProductsByCategory(categoryId);
+      var products = _productService.GetProductsByCategory(categoryId);
       TableRender.CreateTable(products);
     }
 
@@ -64,7 +64,7 @@ namespace WomemFashionManagement.Views
     {
       Console.Write("Nhập tên danh mục sản phẩm: ");
       string? categoryName = Console.ReadLine();
-      Product? product = _productService.GetProductMaxPriceByCategory(categoryName);
+      ProductDto? product = _productService.GetProductMaxPriceByCategory(categoryName);
       if (product == null)
       {
         Console.WriteLine("Không tìm thấy sản phẩm nào trong danh mục này.");
@@ -74,16 +74,16 @@ namespace WomemFashionManagement.Views
       else
       {
         Console.WriteLine($"Sản phẩm có giá trị cao nhất trong danh mục {categoryName} là: \n");
-        TableRender.CreateTable(new List<Product> { product });
+        TableRender.CreateTable(new List<ProductDto> { product });
       }
     }
 
-    public void DisplayProductsByCategoryName()
-    {
-      Console.Write("Nhập tên danh mục sản phẩm mà bạn muốn tìm: ");
-      string categoryName = Console.ReadLine();
-      List<Product> products = _productService.GetProductsByCategoryName(categoryName);
-      TableRender.CreateTable(products);
-    }
+    // public void DisplayProductsByCategoryName()
+    // {
+    //   Console.Write("Nhập tên danh mục sản phẩm mà bạn muốn tìm: ");
+    //   string categoryName = Console.ReadLine();
+    //   List<Product> products = _productService.GetProductsByCategoryName(categoryName);
+    //   TableRender.CreateTable(products);
+    // }
   }
 }
