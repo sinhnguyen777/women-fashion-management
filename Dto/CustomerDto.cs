@@ -21,4 +21,23 @@ namespace WomemFashionManagement.Dto
       Address = address;
     }
   }
+
+  // dto khách hàng mua hàng nhiều nhất
+  public class CustomerMostPurchasedDto
+  {
+    public int CustomerId { get; set; }
+    public string FullName { get; set; }
+    public int TotalOrders { get; set; }
+
+    public CustomerMostPurchasedDto()
+    {
+    }
+
+    public CustomerMostPurchasedDto(int customerId, string fullName, int totalOrder)
+    {
+      CustomerId = customerId;
+      FullName = fullName;
+      TotalOrders = totalOrder;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-using services.Implementations;
+using services.ProductService;
 using WomemFashionManagement.Dto;
 using WomemFashionManagement.Utils;
 
@@ -12,38 +12,6 @@ namespace WomemFashionManagement.Views
     {
       _productService = new ProductService();
     }
-
-    // public void DisplayMenu()
-    // {
-    //   bool isRunning = true;
-    //   while (isRunning)
-    //   {
-    //     Console.Clear();
-    //     Console.WriteLine("═══════════════════════ Menu ════════════════════════");
-    //     Console.WriteLine("1. Lấy danh sách tất cả sản phẩm");
-    //     Console.WriteLine("2. Lấy sản phẩm có giá trị cao nhất theo danh mục");
-    //     Console.WriteLine("3. Lấy tên nhân viên theo mã nhân viên");
-    //     Console.WriteLine("0. Thoát");
-    //     Console.Write("Chọn một tùy chọn (1-3): ");
-    //     int choice = int.Parse(Console.ReadLine());
-    //     switch (choice)
-    //     {
-    //       case 1:
-    //         DisplayAllProducts();
-    //         break;
-    //       case 2:
-    //         DisplayProductMaxPriceByCategory();
-    //         break;
-    //       case 0:
-    //         isRunning = false;
-    //         break;
-    //       default:
-    //         Console.WriteLine("Tùy chọn không hợp lệ. Vui lòng chọn lại.");
-    //         Console.ReadKey();
-    //         break;
-    //     }
-    //   }
-    // }
 
     public void DisplayAllProducts()
     {
@@ -76,6 +44,13 @@ namespace WomemFashionManagement.Views
         Console.WriteLine($"Sản phẩm có giá trị cao nhất trong danh mục {categoryName} là: \n");
         TableRender.CreateTable(new List<ProductDto> { product });
       }
+    }
+
+    public void GetProductMostPurchased()
+    {
+      Console.WriteLine("Sản phẩm được mua nhiều nhất: \n");
+      var product = _productService.GetProductMostPurchased();
+      TableRender.CreateTable(new List<ProductsMostPurchasedDto> { product });
     }
   }
 }

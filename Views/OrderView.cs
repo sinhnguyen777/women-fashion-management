@@ -29,11 +29,17 @@ namespace WomemFashionManagement.Views
       TableRender.CreateTable(new List<OrderDetailDto> { orderDetails });
     }
 
+    public void revenuesByMonth()
+    {
+      Console.WriteLine("Doanh thu theo tháng: \n");
+      var revenues = _orderService.revenuesByMonth();
+      TableRender.CreateTable(revenues);
+    }
+
     public void revenuesByYear()
     {
-      Console.Write("Nhập năm: ");
-      int year = int.Parse(Console.ReadLine());
-      var revenues = _orderService.revenuesByYear(year);
+      Console.Write("Doanh thu theo năm: ");
+      var revenues = _orderService.revenuesByYear();
       TableRender.CreateTable(revenues);
     }
   }

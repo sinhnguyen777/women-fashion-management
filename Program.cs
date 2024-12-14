@@ -9,6 +9,8 @@ namespace WomemFashionManagement
     {
       ProductView productView = new ProductView();
       OrderView orderView = new OrderView();
+      CustomerView customerView = new CustomerView();
+
       Console.OutputEncoding = System.Text.Encoding.UTF8;
       Console.InputEncoding = System.Text.Encoding.UTF8;
       while (true)
@@ -20,11 +22,10 @@ namespace WomemFashionManagement
         Console.WriteLine("3. Lấy sản phẩm có giá trị cao nhất theo danh mục");
         Console.WriteLine("4. Lấy danh sách tất cả đơn hàng");
         Console.WriteLine("5. Lấy chi tiết đơn hàng theo mã đơn hàng");
-        Console.WriteLine("6. Thống kê doang thu theo năm");
-        Console.WriteLine("7. Lấy danh sách hóa đơn theo khách hàng");
-        Console.WriteLine("8. Lấy danh sách chi tiết hóa đơn của một hóa đơn cụ thể");
-        Console.WriteLine("8. Lấy thông tin áo theo mã áo");
-        Console.WriteLine("9. Lấy danh sách hóa đơn theo ngày lập");
+        Console.WriteLine("6. Tìm kiếm sản phẩm được mua nhiều nhất");
+        Console.WriteLine("7. Tìm kiếm khách hàng đã mua hàng nhiều nhất");
+        Console.WriteLine("8. Thống kê doang thu theo tháng");
+        Console.WriteLine("9. Thống kê doang thu theo năm");
         Console.WriteLine("10. Lấy danh sách áo có mô tả chứa từ khóa");
         Console.WriteLine("11. Thoát");
         Console.Write("Chọn một tùy chọn (1-11): ");
@@ -57,19 +58,19 @@ namespace WomemFashionManagement
               break;
             case 6:
               Console.Clear();
-              orderView.revenuesByYear();
+              productView.GetProductMostPurchased();
               break;
             case 7:
               Console.Clear();
-              Console.WriteLine("");
+              customerView.GetCustomerMostPurchased();
               break;
             case 8:
               Console.Clear();
-              Console.WriteLine("");
+              orderView.revenuesByMonth();
               break;
             case 9:
               Console.Clear();
-              Console.WriteLine("");
+              orderView.revenuesByYear();
               break;
             case 10:
               Console.Clear();

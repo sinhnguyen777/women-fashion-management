@@ -1,19 +1,23 @@
 using Repositories.CategoriesRepository;
+using Repositories.OrderRepository;
 using Repositories.ProductRepository;
 using WomemFashionManagement.Dto;
 
-namespace services.Implementations
+namespace services.ProductService
 {
     public class ProductService
     {
         private readonly ProductRepository _productRepository;
         private readonly CategoriesRepository _categoriesRepository;
+        private readonly OrderRepository _orderRepository;
         public ProductService()
         {
             _productRepository = new ProductRepository();
             _categoriesRepository = new CategoriesRepository();
+            _orderRepository = new OrderRepository();
         }
 
+        // lấy tất cả sản phẩm
         public List<ProductDto> GetAllProducts()
         {
             try
@@ -26,6 +30,7 @@ namespace services.Implementations
             }
         }
 
+        // lấy sản phẩm theo mã danh mục
         public List<ProductDto> GetProductsByCategory(int categoryId)
         {
             try
@@ -45,6 +50,7 @@ namespace services.Implementations
             }
         }
 
+        // lấy sản phẩm theo tên danh mục
         public List<ProductDto> GetProductsByCategoryName(string categoryName)
         {
             try
@@ -64,6 +70,7 @@ namespace services.Implementations
             }
         }
 
+        // lấy sản phẩm có giá trị cao nhất theo danh mục
         public ProductDto? GetProductMaxPriceByCategory(string categoryName)
         {
             try
@@ -82,6 +89,32 @@ namespace services.Implementations
             catch (System.Exception)
             {
                 throw new System.Exception("Lỗi khi lấy sản phẩm cao tiền nhất theo danh mục");
+            }
+        }
+
+        // lấy sản phẩm được mua nhiều nhất
+        public ProductsMostPurchasedDto GetProductMostPurchased()
+        {
+            try
+            {
+                var products = _productRepository.GetAllProducts();
+                var orderDetails = _orderRepository.GetAllOrderDetails();
+
+                var result = from od in orderDetails
+                             join p in products on od.ProductId equals p.ProductId
+                             group od by new { od.ProductId, p.ProductName } into g
+                             select new ProductsMostPurchasedDto
+                             {
+                                 ProductId = g.Key.ProductId,
+                                 ProductName = g.Key.ProductName,
+                                 NumberOfPurchases = g.Sum(x => x.Quantity)
+                             };
+
+                return result.OrderByDescending(x => x.NumberOfPurchases).FirstOrDefault();
+            }
+            catch (System.Exception)
+            {
+                throw new System.Exception("Lỗi khi lấy sản phẩm được mua nhiều nhất");
             }
         }
     }

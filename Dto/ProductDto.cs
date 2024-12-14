@@ -25,4 +25,23 @@ namespace WomemFashionManagement.Dto
       Color = color;
     }
   }
+
+  public class ProductsMostPurchasedDto
+  {
+    public int ProductId { get; set; }
+    public string ProductName { get; set; }
+    public int NumberOfPurchases { get; set; }
+
+    public ProductsMostPurchasedDto()
+    {
+    }
+
+    public ProductsMostPurchasedDto(int productId, string productName, int numberOfPurchases)
+    {
+      ProductId = productId;
+      ProductName = productName;
+      NumberOfPurchases = numberOfPurchases;
+    }
+  }
+
 }

@@ -68,6 +68,25 @@ namespace WomemFashionManagement.Dto
     }
   }
 
+  // dto thống kê doanh thu các tháng trong năm hiện tại
+  public class RevenueMonthDto
+  {
+    public int Month { get; set; }
+    public decimal Total { get; set; }
+    public int QuantityProduct { get; set; }
+
+    public RevenueMonthDto()
+    {
+    }
+
+    public RevenueMonthDto(int month, decimal total, int quantityProduct)
+    {
+      Month = month;
+      Total = total;
+      QuantityProduct = quantityProduct;
+    }
+  }
+
   // dto thống kê doanh thu trong năm
   public class RevenueDto
   {
