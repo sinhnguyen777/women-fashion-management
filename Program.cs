@@ -8,6 +8,7 @@ namespace WomemFashionManagement
     static void Main(string[] args)
     {
       ProductView productView = new ProductView();
+      OrderView orderView = new OrderView();
       Console.OutputEncoding = System.Text.Encoding.UTF8;
       Console.InputEncoding = System.Text.Encoding.UTF8;
       while (true)
@@ -17,9 +18,9 @@ namespace WomemFashionManagement
         Console.WriteLine("1. Lấy danh sách tất cả sản phẩm");
         Console.WriteLine("2. Lấy sản phẩm theo danh mục");
         Console.WriteLine("3. Lấy sản phẩm có giá trị cao nhất theo danh mục");
-        Console.WriteLine("4. Lấy tên nhân viên theo mã nhân viên");
-        Console.WriteLine("5. Lấy danh sách hóa đơn theo tổng tiền lớn hơn một giá trị cụ thể");
-        Console.WriteLine("6. Lấy danh sách áo theo loại");
+        Console.WriteLine("4. Lấy danh sách tất cả đơn hàng");
+        Console.WriteLine("5. Lấy chi tiết đơn hàng theo mã đơn hàng");
+        Console.WriteLine("6. Thống kê doang thu theo năm");
         Console.WriteLine("7. Lấy danh sách hóa đơn theo khách hàng");
         Console.WriteLine("8. Lấy danh sách chi tiết hóa đơn của một hóa đơn cụ thể");
         Console.WriteLine("8. Lấy thông tin áo theo mã áo");
@@ -48,15 +49,15 @@ namespace WomemFashionManagement
               break;
             case 4:
               Console.Clear();
-              Console.WriteLine("");
+              orderView.DisplayAllOrders();
               break;
             case 5:
               Console.Clear();
-              Console.WriteLine("");
+              orderView.DisplayAllOrderDetails();
               break;
             case 6:
               Console.Clear();
-              Console.WriteLine("");
+              orderView.revenuesByYear();
               break;
             case 7:
               Console.Clear();

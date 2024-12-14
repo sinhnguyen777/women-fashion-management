@@ -33,19 +33,21 @@ namespace WomemFashionManagement.Data
 
       Orders = new List<Order>
       {
-        new Order { OrderId = 1, OrderDate = new DateTime(2021, 1, 1), CustomerId = 1 },
-        new Order { OrderId = 2, OrderDate = new DateTime(2021, 1, 2), CustomerId = 2 },
-        new Order { OrderId = 3, OrderDate = new DateTime(2021, 1, 3), CustomerId = 3 }
+        new Order { OrderId = 1, OrderDate = new DateTime(2021, 01, 01), CustomerId = 1, Status = "Pending" },
+        new Order { OrderId = 2, OrderDate = new DateTime(2021, 01, 02), CustomerId = 2, Status = "In Progress" },
+        new Order { OrderId = 3, OrderDate = new DateTime(2021, 01, 03), CustomerId = 3, Status = "Completed" },
+        new Order { OrderId = 4, OrderDate = new DateTime(2021, 01, 04), CustomerId = 4, Status = "In Progress" },
+        new Order { OrderId = 5, OrderDate = new DateTime(2021, 01, 05), CustomerId = 5, Status = "Completed" }
       };
 
       OrderDetails = new List<OrderDetail>
       {
-        new OrderDetail { OrderId = 1, ProductId = 1, Quantity = 1, Price = 10 },
-        new OrderDetail { OrderId = 1, ProductId = 2, Quantity = 2, Price = 20 },
-        new OrderDetail { OrderId = 2, ProductId = 3, Quantity = 3, Price = 30 },
-        new OrderDetail { OrderId = 2, ProductId = 4, Quantity = 4, Price = 40 },
-        new OrderDetail { OrderId = 3, ProductId = 5, Quantity = 5, Price = 50 },
-        new OrderDetail { OrderId = 3, ProductId = 6, Quantity = 6, Price = 60 }
+        new OrderDetail { OrderId = 1, ProductId = 1, Quantity = 1, Price = 10, Total = 10 },
+        new OrderDetail { OrderId = 2, ProductId = 2, Quantity = 2, Price = 20, Total = 40 },
+        new OrderDetail { OrderId = 3, ProductId = 3, Quantity = 3, Price = 30, Total = 90 },
+        new OrderDetail { OrderId = 4, ProductId = 4, Quantity = 4, Price = 40, Total = 160 },
+        new OrderDetail { OrderId = 5, ProductId = 5, Quantity = 5, Price = 50, Total = 250 },
+        // new OrderDetail { OrderId = 6, ProductId = 6, Quantity = 6, Price = 60, Total = 360 }
       };
 
       Products = new List<Product>

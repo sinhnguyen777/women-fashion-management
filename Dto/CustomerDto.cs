@@ -1,6 +1,6 @@
-namespace WomemFashionManagement.Models
+namespace WomemFashionManagement.Dto
 {
-  public class Customer
+  public class CustomerDto
   {
     public int CustomerId { get; set; }
     public string FullName { get; set; }
@@ -8,11 +8,11 @@ namespace WomemFashionManagement.Models
     public int Phone { get; set; }
     public string Address { get; set; }
 
-    public Customer()
+    public CustomerDto()
     {
     }
 
-    public Customer(int customerId, string fullName, string email, int phone, string address)
+    public CustomerDto(int customerId, string fullName, string email, int phone, string address)
     {
       CustomerId = customerId;
       FullName = fullName;

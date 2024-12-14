@@ -1,5 +1,5 @@
 using services.Implementations;
-using WomemFashionManagement.Models;
+using WomemFashionManagement.Dto;
 using WomemFashionManagement.Utils;
 
 namespace WomemFashionManagement.Views
@@ -47,14 +47,14 @@ namespace WomemFashionManagement.Views
 
     public void DisplayAllProducts()
     {
-      Console.WriteLine("Danh sách tất cả sản phẩm: ");
+      Console.WriteLine("Danh sách tất cả sản phẩm: \n");
       var products = _productService.GetAllProducts();
       TableRender.CreateTable(products);
     }
 
     public void DisplayProductsByCategory()
     {
-      Console.Write("Nhập mã danh mục sản phẩm: ");
+      Console.Write("Nhập mã danh mục sản phẩm: \n");
       int categoryId = int.Parse(Console.ReadLine());
       var products = _productService.GetProductsByCategory(categoryId);
       TableRender.CreateTable(products);
@@ -62,7 +62,7 @@ namespace WomemFashionManagement.Views
 
     public void DisplayProductMaxPriceByCategory()
     {
-      Console.Write("Nhập tên danh mục sản phẩm: ");
+      Console.Write("Nhập tên danh mục sản phẩm: \n");
       string? categoryName = Console.ReadLine();
       ProductDto? product = _productService.GetProductMaxPriceByCategory(categoryName);
       if (product == null)
@@ -77,13 +77,5 @@ namespace WomemFashionManagement.Views
         TableRender.CreateTable(new List<ProductDto> { product });
       }
     }
-
-    // public void DisplayProductsByCategoryName()
-    // {
-    //   Console.Write("Nhập tên danh mục sản phẩm mà bạn muốn tìm: ");
-    //   string categoryName = Console.ReadLine();
-    //   List<Product> products = _productService.GetProductsByCategoryName(categoryName);
-    //   TableRender.CreateTable(products);
-    // }
   }
 }

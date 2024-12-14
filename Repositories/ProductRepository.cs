@@ -1,7 +1,7 @@
 using WomemFashionManagement.Models;
 using WomemFashionManagement.Repositories;
-using System.Linq;
 using WomemFashionManagement.Data;
+using WomemFashionManagement.Dto;
 
 namespace Repositories.ProductRepository
 {
