@@ -33,7 +33,7 @@ namespace WomemFashionManagement.Data
 
       Orders = new List<Order>
       {
-        new Order { OrderId = 1, OrderDate = new DateTime(2024, 01, 01), CustomerId = 1, Status = "Pending" },
+        new Order { OrderId = 1, OrderDate = new DateTime(2024, 01, 11), CustomerId = 1, Status = "Pending" },
         new Order { OrderId = 2, OrderDate = new DateTime(2024, 02, 02), CustomerId = 2, Status = "In Progress" },
         new Order { OrderId = 3, OrderDate = new DateTime(2024, 03, 03), CustomerId = 3, Status = "Completed" },
         new Order { OrderId = 4, OrderDate = new DateTime(2024, 01, 04), CustomerId = 4, Status = "In Progress" },
@@ -41,23 +41,33 @@ namespace WomemFashionManagement.Data
         new Order { OrderId = 6, OrderDate = new DateTime(2024, 05, 06), CustomerId = 1, Status = "Pending" },
         new Order { OrderId = 7, OrderDate = new DateTime(2024, 06, 07), CustomerId = 2, Status = "In Progress" },
         new Order { OrderId = 8, OrderDate = new DateTime(2024, 07, 08), CustomerId = 3, Status = "Completed" },
+        new Order { OrderId = 9, OrderDate = new DateTime(2024, 08, 22), CustomerId = 4, Status = "Pending" },
+        new Order { OrderId = 10, OrderDate = new DateTime(2024, 09, 10), CustomerId = 5, Status = "In Progress" },
+        new Order { OrderId = 11, OrderDate = new DateTime(2024, 10, 11), CustomerId = 1, Status = "Completed" },
+        new Order { OrderId = 12, OrderDate = new DateTime(2024, 11, 12), CustomerId = 2, Status = "Pending" },
+        new Order { OrderId = 13, OrderDate = new DateTime(2024, 12, 13), CustomerId = 3, Status = "In Progress" },
       };
 
       OrderDetails = new List<OrderDetail>
       {
-        new OrderDetail { OrderId = 1, ProductId = 1, Quantity = 1, Price = 10, Total = 10 },
-        new OrderDetail { OrderId = 2, ProductId = 2, Quantity = 2, Price = 20, Total = 40 },
-        new OrderDetail { OrderId = 3, ProductId = 3, Quantity = 3, Price = 30, Total = 90 },
-        new OrderDetail { OrderId = 4, ProductId = 1, Quantity = 4, Price = 40, Total = 160 },
-        new OrderDetail { OrderId = 5, ProductId = 5, Quantity = 5, Price = 50, Total = 250 },
-        new OrderDetail { OrderId = 6, ProductId = 1, Quantity = 2, Price = 60, Total = 360 },
-        new OrderDetail { OrderId = 7, ProductId = 1, Quantity = 1, Price = 70, Total = 70 },
-        new OrderDetail { OrderId = 8, ProductId = 3, Quantity = 3, Price = 80, Total = 240 }
+        new OrderDetail { OrderId = 1, ProductId = 1, Quantity = 1 },
+        new OrderDetail { OrderId = 2, ProductId = 2, Quantity = 2 },
+        new OrderDetail { OrderId = 3, ProductId = 3, Quantity = 3 },
+        new OrderDetail { OrderId = 4, ProductId = 1, Quantity = 4 },
+        new OrderDetail { OrderId = 5, ProductId = 5, Quantity = 5 },
+        new OrderDetail { OrderId = 6, ProductId = 9, Quantity = 2 },
+        new OrderDetail { OrderId = 7, ProductId = 1, Quantity = 1 },
+        new OrderDetail { OrderId = 8, ProductId = 3, Quantity = 3 },
+        new OrderDetail { OrderId = 9, ProductId = 2, Quantity = 2 },
+        new OrderDetail { OrderId = 10, ProductId = 5, Quantity = 1 },
+        new OrderDetail { OrderId = 11, ProductId = 6, Quantity = 2 },
+        new OrderDetail { OrderId = 12, ProductId = 3, Quantity = 3 },
+        new OrderDetail { OrderId = 13, ProductId = 11, Quantity = 4 },
       };
 
       Products = new List<Product>
       {
-        new Product { ProductId = 1, ProductName = "Áo khoác thu đông tháng 12", CategoryId = 3, Price = 300010, Quantity = 10 },
+        new Product { ProductId = 1, ProductName = "Áo khoác thu đông tháng 12", CategoryId = 3, Price = 100000, Quantity = 10 },
         new Product { ProductId = 2, ProductName = "Áo sơ mi tay dài thời trang 2024", CategoryId = 2, Price = 150000, Quantity = 33 },
         new Product { ProductId = 3, ProductName = "Áo thun cổ tròn", CategoryId = 1, Price = 30000, Quantity = 100 },
         new Product { ProductId = 4, ProductName = "Áo khoác nữ mẫu mới 2024", CategoryId = 3, Price = 299000, Quantity = 99 },

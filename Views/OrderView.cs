@@ -29,6 +29,12 @@ namespace WomemFashionManagement.Views
       TableRender.CreateTable(new List<OrderDetailDto> { orderDetails });
     }
 
+    public void orderHightValue()
+    {
+      Console.WriteLine("Danh sách đơn hàng có giá trị lớn hơn 100 và trạng thái đã hoàn thành: \n");
+      var orders = _orderService.orderHightValue();
+      TableRender.CreateTable(orders);
+    }
     public void revenuesByMonth()
     {
       Console.WriteLine("Doanh thu theo tháng: \n");

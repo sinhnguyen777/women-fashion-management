@@ -22,11 +22,11 @@ namespace WomemFashionManagement
         Console.WriteLine("3. Lấy sản phẩm có giá trị cao nhất theo danh mục");
         Console.WriteLine("4. Lấy danh sách tất cả đơn hàng");
         Console.WriteLine("5. Lấy chi tiết đơn hàng theo mã đơn hàng");
-        Console.WriteLine("6. Tìm kiếm sản phẩm được mua nhiều nhất");
-        Console.WriteLine("7. Tìm kiếm khách hàng đã mua hàng nhiều nhất");
-        Console.WriteLine("8. Thống kê doang thu theo tháng");
-        Console.WriteLine("9. Thống kê doang thu theo năm");
-        Console.WriteLine("10. Lấy danh sách áo có mô tả chứa từ khóa");
+        Console.WriteLine("6. Tìm kiếm đơn hàng có giá trị lớn hơn 100 và trạng thái đã hoàn thành");
+        Console.WriteLine("7. Tìm kiếm sản phẩm được bán nhiều nhất");
+        Console.WriteLine("8. Tìm kiếm khách hàng đã mua hàng nhiều nhất");
+        Console.WriteLine("9. Thống kê doanh thu theo tháng trong năm hiện tại");
+        Console.WriteLine("10. Thống kê doanh thu trong cả năm");
         Console.WriteLine("11. Thoát");
         Console.Write("Chọn một tùy chọn (1-11): ");
 
@@ -58,22 +58,23 @@ namespace WomemFashionManagement
               break;
             case 6:
               Console.Clear();
-              productView.GetProductMostPurchased();
+              orderView.orderHightValue();
               break;
             case 7:
               Console.Clear();
-              customerView.GetCustomerMostPurchased();
+              productView.GetProductMostPurchased();
               break;
             case 8:
               Console.Clear();
-              orderView.revenuesByMonth();
+              customerView.GetCustomerMostPurchased();
               break;
             case 9:
               Console.Clear();
-              orderView.revenuesByYear();
+              orderView.revenuesByMonth();
               break;
             case 10:
               Console.Clear();
+              orderView.revenuesByYear();
               Console.WriteLine("");
               break;
             case 11:

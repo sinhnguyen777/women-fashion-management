@@ -48,7 +48,7 @@ namespace WomemFashionManagement.Views
 
     public void GetProductMostPurchased()
     {
-      Console.WriteLine("Sản phẩm được mua nhiều nhất: \n");
+      Console.WriteLine("Sản phẩm được bán nhiều nhất: \n");
       var product = _productService.GetProductMostPurchased();
       TableRender.CreateTable(new List<ProductsMostPurchasedDto> { product });
     }
